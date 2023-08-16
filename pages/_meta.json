@@ -1,0 +1,13 @@
+{
+  "index": {
+    "title": "Introduction",
+    "theme": {
+      "breadcrumb": false,
+      "pagination": false
+    }
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}

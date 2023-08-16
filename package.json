@@ -1,0 +1,32 @@
+{
+  "name": "dev-notes",
+  "version": "0.1.0",
+  "description": "Wes June’s Dev Notes",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesjune/dev-notes.git"
+  },
+  "author": "Wes June <dev.wesjune@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wesjune/dev-notes/issues"
+  },
+  "homepage": "https://github.com/wesjune/dev-notes#readme",
+  "dependencies": {
+    "next": "^13.0.6",
+    "nextra": "latest",
+    "nextra-theme-docs": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.10",
+    "@types/react": "18.2.18",
+    "typescript": "^4.9.3"
+  }
+}
