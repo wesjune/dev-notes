@@ -1,0 +1,46 @@
+# How to check if a variable is an object in JavaScript?
+
+## typeof
+
+```jsx
+function isObject(variable) {
+  return (
+    typeof variable === 'object' &&
+    variable !== null &&
+    !Array.isArray(variable)
+  );
+}
+```
+
+## Object()
+
+```jsx
+function isObject(variable) {
+  return variable === Object(variable);
+}
+```
+
+## Object.prototype.toString()
+
+```jsx
+function isObject(variable) {
+  return Object.prototype.toString.call(variable) === '[object Object]';
+}
+```
+
+```jsx
+Object.prototype.toString.call({})   // '[object Object]'
+
+Object.prototype.toString.call([])   // '[object Array]'
+
+Object.prototype.toString.call(null) // ️'[object Null]'
+
+Object.prototype.toString.call('')   // ️'[object String]'
+
+Object.prototype.toString.call()     // '[object Undefined]'
+```
+
+## References
+
+- [types - Check if a value is an object in JavaScript - Stack Overflow](https://stackoverflow.com/questions/8511281/check-if-a-value-is-an-object-in-javascript)
+- [How to Check if a Value is an Object in JavaScript | bobbyhadz](https://bobbyhadz.com/blog/javascript-check-if-value-is-object)

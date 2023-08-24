@@ -1,0 +1,36 @@
+# How to check if a variable is an array in JavaScript?
+
+## isArray
+
+```js
+Array.isArray(variable)
+```
+
+### [instanceof vs. Array.isArray()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray#instanceof_vs._array.isarray)
+
+When checking for `Array` instance, `Array.isArray()` is preferred over `instanceof` because it works across realms.
+
+## instanceof
+
+```js
+variable instanceof Array
+```
+
+## constructor
+
+```js
+variable.constructor === Array
+```
+
+## Object.prototype.toString()
+
+```js
+Object.prototype.toString.call(variable) === '[object Array]'
+```
+
+## References
+
+- [How to check if Variable is an Array in JavaScript | SamanthaMing.com](https://www.samanthaming.com/tidbits/89-how-to-check-if-variable-is-array/)
+- [How to check if a variable is an array in JavaScript? - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-check-if-a-variable-is-an-array-in-javascript/)
+- [How do I check if a variable is an array in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/767486/how-do-i-check-if-a-variable-is-an-array-in-javascript)
+- [Array.isArray() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
