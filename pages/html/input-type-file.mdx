@@ -1,0 +1,43 @@
+# &lt;input type=&quot;file&quot;&gt;
+
+`<input>` elements with `type="file"` let the user choose one or more files from their device storage.
+
+```html
+<label for="file"> Choose file to upload </label>
+<input
+  type="file"
+  id="file"
+  name="file"
+  accept="image/png, image/jpeg"
+  multiple
+/>
+```
+
+## Accept
+
+The `<input>` element has the `accept` attribute that allows you to specify the types of files the user can upload.
+
+You need to pass it a string containing a comma-separated list of unique file type specifiers.
+
+You can also use it to specify only audio, image, or video format.
+
+```html
+<input type="file" accept=".png, .jpg" />
+```
+
+## Multiple
+
+The `multiple` attribute allows the user to enter multiple values on an `<input>`. It is a boolean attribute valid for file or email input types and the `<select>` element.
+
+For an email input, if and only if the multiple attribute is specified, the value can be a list of comma-separated email addresses. Any whitespace is removed from each address in the list.
+
+For a file input, the user can select multiple files in the as usual (holding down Shift or Crtl).
+
+```html
+<input type="file" multiple />
+```
+
+## References
+
+- [&lt;input type=&quot;file&quot;&gt; - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
+- [7 useful HTML attributes you may not know](https://dev.to/simonpaix/7-useful-html-attributes-you-may-not-know-7mn)

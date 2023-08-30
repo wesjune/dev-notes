@@ -1,0 +1,70 @@
+# Semantic HTML tags
+
+## `<address>`
+
+```html
+<address>
+  <a href="mailto:dev.wesjune@gmail.com">dev.wesjune@gmail.com</a>
+  <a href="tel:+886987654321">(+886) 0987-654-321</a>
+</address>
+```
+
+## `<datalist>`
+
+```html
+<form>
+  <fieldset>
+    <input type="text" list="lang" />
+  </fieldset>
+</form>
+
+<datalist id="lang">
+  <option value="JavaScript"></option>
+  <option value="Python"></option>
+  <option value="Java"></option>
+  <option value="C"></option>
+</datalist>
+```
+
+## `<details>` and `<summary>`
+
+```html
+<details>
+  <summary><label for="fn">Name & Extension:</label></summary>
+  <p><input type="text" id="fn" value="Pillar Magazine.pdf" /></p>
+  <p>
+    <label><input type="checkbox" checked />Hide extension</label>
+  </p>
+</details>
+```
+
+## `<dialog>`
+
+```html
+<dialog open>This is an open dialog window</dialog>
+```
+
+## `<progress>`
+
+```html
+<label for="file">Downloading</label>
+<progress max="100" value="60" id="file">60%</progress>
+```
+
+## `<time>`
+
+```html
+<p>
+  Today is{' '}
+  <time datetime="2020-05-07T14:00">May 7th</time>
+</p>
+```
+
+## References
+
+- [HTML Standard](https://html.spec.whatwg.org/multipage/interactive-elements.html)
+- [HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+- [Use semantic HTML for easy keyboard wins](https://web.dev/use-semantic-html/)
+- [WAI-ARIA Roles - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)
+- [Top 10 HTML5 Questions - Featured Challenges and Events - Codecademy Forums](https://discuss.codecademy.com/t/article-top-10-html5-questions/503672/3)
+- [Semantic markup - Designing in the Browser](https://youtu.be/arMgwKY52Bs)

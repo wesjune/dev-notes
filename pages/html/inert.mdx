@@ -1,0 +1,78 @@
+# inert
+
+The `HTMLElement` property **`inert`** is a boolean value that, when present, makes the browser "ignore" user input events for the element, including focus events and events from assistive technologies.
+
+The `inert` attribute was originally specified in the context of the dialog element [about 10 years ago](https://github.com/whatwg/html/commit/2fb24fcf), where the main use-case was making the content behind a modal dialog non-interactive. It was later removed due to a lack of adoption.
+
+## Syntax
+
+```
+isInert = HTMLElement.inert;
+
+HTMLElement.inert = true | false;
+```
+
+A node (in particular elements and text nodes) can be **inert**. When a node is [inert](https://html.spec.whatwg.org/multipage/interaction.html#inert):
+
+- Hit-testing must act as if the ['pointer-events'](https://drafts.csswg.org/css-ui-4/#pointer-events-control) CSS property were set to 'none'.
+- Text selection functionality must act as if the ['user-select'](https://drafts.csswg.org/css-ui-4/#content-selection) CSS property were set to 'none'.
+- If it is [editable](https://w3c.github.io/editing/docs/execCommand/#editable), the node behaves as if it were non-editable.
+- The user agent may ignore the node for the purposes of [find-in-page](find-in-page).
+
+## Example
+
+```html
+<body>
+  <div class="modal">
+    <h2>Modal Title</h2>
+    <p>...</p>
+    <button>Save</button>
+    <button>Discard</button>
+  </div>
+  <main inert>
+    <!-- cannot be keyboard focused or clicked -->
+  </main>
+</body>
+```
+
+## Visually indicate inert elements
+
+By default, there is no visual indication of a subtree being inert. It is recommended that you clearly mark what parts of the DOM are active and which are inert.
+
+```css
+[inert],
+[inert] * {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+}
+```
+
+## Pre-existing Solutions
+
+The most basic way to disable all interactions is the `disabled` HTML attribute, it prevents focus, clicks, edition or selection. However, **it only works on form controls**, and does not necessarily hide the control from assistive technologies.
+
+### To prevent focus
+
+`tabindex="-1"` is a popular option, but it isn’t ideal because **setting the attribute on a container element will not prevent its children from being focused, and it also does not prevent click-focus with a mouse**. If you want to prevent keyboard focus on a whole section, every single focusable element in the section needs the attribute set.
+
+### To prevent clicks
+
+the `pointer-events: none` CSS property may be an option although, unless you’ve put `tabindex="-1"` on the element as well, **tabbing to the element and interacting with it is still possible**.
+
+### To prevent selection
+
+the `user-select: none` CSS property is the most common option.
+
+### To prevent editing
+
+If you’re using `contenteditable`, you would need to manually remove the `contenteditable` attribute. If it’s a form control, you need to manually set the `disabled` attribute.
+
+## References
+
+- [HTML Standard](https://html.spec.whatwg.org/multipage/interaction.html#inert)
+- [HTMLElement.inert - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert)
+- [Non-interactive Elements with the inert attribute | WebKit](https://webkit.org/blog/12578/non-interactive-elements-with-the-inert-attribute/)
+- [Introducing inert - Chrome Developers](https://developer.chrome.com/blog/inert/)
+- [State of CSS 2022](https://web.dev/state-of-css-2022/#inert)
