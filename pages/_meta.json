@@ -11,5 +11,6 @@
     "type": "page"
   },
   "html": "HTML",
-  "javascript": "JavaScript"
+  "javascript": "JavaScript",
+  "typescript": "TypeScript"
 }

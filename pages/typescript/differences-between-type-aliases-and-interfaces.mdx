@@ -1,0 +1,88 @@
+# Differences between type aliases and interfaces
+
+Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an `interface` are available in `type`, the key distinction is that a `type` cannot be re-opened to add new properties vs an `interface` which is always extendable.
+
+## Extending
+
+### Extending an interface using the `extends` keyword
+
+```ts
+interface Animal {
+  name: string;
+}
+
+interface Bear extends Animal {
+  honey: boolean;
+}
+
+const bear = getBear();
+bear.name;
+bear.honey;
+```
+
+### Extending a type via intersections
+
+```ts
+type Animal = {
+  name: string;
+}
+
+type Bear = Animal & { 
+  honey: boolean;
+}
+
+const bear = getBear();
+bear.name;
+bear.honey;
+```
+
+## Declaration merging
+
+### Adding new fields to an existing interface
+
+```ts
+interface Window {
+  title: string;
+}
+
+interface Window {
+  ts: TypeScriptAPI;
+}
+
+const src = 'const a = "Hello World"';
+window.ts.transpileModule(src, {});
+```
+
+### A type cannot be changed after being created
+
+```ts
+type Window = {
+  title: string;
+}
+
+type Window = {
+  ts: TypeScriptAPI;
+}
+
+// Error: Duplicate identifier 'Window'.
+```
+
+## When to use types
+
+- To create a new name for a primitive type
+- To define a union type, tuple type, function type, or another more complex type
+- To overload functions
+- To use mapped types, conditional types, type guards, or other advanced type features
+
+Many developers prefer to use types because they align well with the functional programming paradigm. The expressive type declarations facilitate functional composition, immutability, and other functional programming capabilities in a type-safe manner.
+
+## Conclusion
+
+For the most part, you can choose based on personal preference, and TypeScript will tell you if it needs something to be the other kind of declaration. If you would like a heuristic, use `interface` until you need to use features from `type`.
+
+## References
+
+- [TypeScript: Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+- [Playground Example - Types vs Interfaces](https://www.typescriptlang.org/play/typescript/language-extensions/types-vs-interfaces.ts.html)
+- [Interfaces vs Types in TypeScript - Stack Overflow](https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript/)
+- [Types vs. interfaces in TypeScript - LogRocket Blog](https://blog.logrocket.com/types-vs-interfaces-typescript/)
