@@ -1,0 +1,7 @@
+# The maximum delay value for setTimeout
+
+Browsers store the delay as a 32-bit signed integer internally. This causes an integer overflow when using delays larger than **2,147,483,647 ms** (about **24.8 days**), resulting in the timeout being executed immediately.
+
+## Reference
+
+- [setTimeout() global function - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout#maximum_delay_value)
