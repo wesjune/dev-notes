@@ -1,0 +1,133 @@
+# CSS selectors
+
+## Specificity
+
+> !important > Inline style > ID selector > Class selector > Element selector
+
+[CSS Specificity](https://cssspecificity.com/)
+
+## Pseudo-classes
+
+### :root
+
+Selects the root element of the document.
+Mostly used to store global rule values using CSS variable as it applies to the root element.
+
+```css
+:root {
+  --color-primary: lightslategray;
+  --color-secondary: slategray;
+}
+```
+
+### :empty
+
+Selects any element that has no children of any kind.
+The element must be empty, it has no whitespace, visible content, or descendant elements.
+
+```html
+<div>This doesn't have outline</div>
+<div></div>
+```
+
+```css
+div:empty {
+  outline: 2px solid lightcoral;
+}
+```
+
+### :only-child
+
+Selects an element that is the only child of its parent element.
+
+```html
+<ul>
+  <li>This list has just one element.</li>
+</ul>
+```
+
+```css
+li:only-child {
+  color: lightcoral;
+}
+```
+
+### :indeterminate
+
+The `:indeterminate` CSS pseudo-class represents any form element whose state is indeterminate, such as checkboxes which have their HTML `indeterminate` attribute set to `true`, radio buttons which are members of a group in which all radio buttons are unchecked, and indeterminate `<progress>` elements.
+
+```css
+/* Selects any <input> whose state is indeterminate */
+input:indeterminate {
+  background: lime;
+}
+```
+
+[:indeterminate - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate)
+
+## Pseudo-elements
+
+### ::selection
+
+Selects the highlighted
+
+```css
+p::selection {
+  background-color: dimgray;
+  color: white;
+}
+```
+
+### ::placeholder
+
+Selects the placeholder text in an `<input>` or `<textarea>` element.
+
+```css
+input::placeholder {
+  color: #808080;
+}
+```
+
+### ::first-letter
+
+Selects the first letter
+
+```css
+p::first-letter {
+  color: darkgray;
+}
+```
+
+### ::first-line
+
+Selects the first line of text
+
+```css
+p::first-line {
+  color: darkgray;
+}
+```
+
+### ::marker
+
+Selects the marker box of a list item, which typically contains a bullet or number. It works on any element or pseudo-element set to `display: list-item`, such as the `<li>` and `<summary>` elements.
+
+```css
+li::marker {
+  content: '😍';
+}
+```
+
+```css
+ul li::marker {
+  color: red;
+  font-size: 1.5em;
+}
+```
+
+[::marker - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker)
+
+## References
+
+- [Pseudo-classes - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+- [Pseudo-elements - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)

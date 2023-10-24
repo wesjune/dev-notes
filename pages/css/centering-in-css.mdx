@@ -1,0 +1,50 @@
+# Centering in CSS
+
+## Grid
+
+```css
+.content-center {
+  display: grid;
+  place-content: center;
+}
+```
+
+## Flex
+
+```css
+.gentle-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+```css
+.autobot {
+  display: flex;
+}
+
+.autobot > * {
+  margin: auto;
+}
+```
+
+## Position
+
+```css
+.parent {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+## References
+
+- [Centering in CSS](https://web.dev/centering-in-css/)
+- [Centering in CSS: A Complete Guide | CSS-Tricks - CSS-Tricks](https://css-tricks.com/centering-css-complete-guide/)

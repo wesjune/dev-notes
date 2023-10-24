@@ -1,0 +1,34 @@
+# Containing block
+
+The size and position of an element are often impacted by its **containing block**. Most often, the containing block is the [content area](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#content_area) of an element's nearest [block-level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) ancestor, but this is not always the case.
+
+## Identifying the containing block
+
+The process for identifying the containing block depends entirely on the value of the element's `position` property:
+
+1. If the `position` property is `static`, `relative`, or `sticky`, the containing block is formed by the edge of the _content box_ of the nearest ancestor element that is either **a block container** (such as an inline-block, block, or list-item element) or **establishes a formatting context** (such as a table container, flex container, grid container, or the block container itself).
+2. If the `position` property is `absolute`, the containing block is formed by the edge of the _padding box_ of the nearest ancestor element that has a `position` value other than `static` (`fixed`, `absolute`, `relative`, or `sticky`).
+3. If the `position` property is `fixed`, the containing block is established by the [viewport](https://developer.mozilla.org/en-US/docs/Glossary/Viewport) (in the case of continuous media) or the page area (in the case of paged media).
+4. If the `position` property is `absolute` or `fixed`, the containing block may also be formed by the edge of the _padding box_ of the nearest ancestor element that has the following:
+   - A `transform` or `perspective` value other than `none`
+   - A `will-change` value of `transform` or `perspective`
+   - A `filter` value other than `none` or a `will-change` value of `filter` (only works on Firefox).
+   - A `contain` value of `paint` (e.g. `contain: paint;`)
+   - A `backdrop-filter` other than `none` (e.g. `backdrop-filter: blur(10px);`)
+
+> Note: The containing block in which the root element (`<html>`) resides is a rectangle called the **initial containing block**. It has the dimensions of the viewport (for continuous media) or the page area (for paged media).
+
+## Positioning contexts
+
+If no ancestor elements have their position property explicitly defined, then by default all ancestor elements will have a static position. The result of this is the absolutely positioned element will be contained in the **initial containing block**. The initial containing block has the dimensions of the viewport and is also the block that contains the `<html>` element. In other words, the absolutely positioned element will be displayed outside of the `<html>` element and be positioned relative to the initial viewport.
+
+## See also
+
+- [Positioning - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
+- [position - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+## References
+
+- [Layout and the containing block - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block)
+- [10.1 Definition of "containing block"](https://www.w3.org/TR/CSS2/visudet.html#containing-block-details)
+- [21.3.2. Containing Blocks - Web Design in a Nutshell, 3rd Edition [Book]](https://www.oreilly.com/library/view/web-design-in/0596009879/ch21s03s02.html)

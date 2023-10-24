@@ -1,0 +1,164 @@
+# Shorthand properties
+
+## Animation
+
+```css
+animation-name: bounce;
+animation-duration: 3s;
+animation-timing-function: ease;
+animation-delay: 1s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+animation-fill-mode: forwards;
+animation-play-state: running;
+```
+
+These statements can be simplified to just one:
+
+```css
+animation: bounce 3s ease 1s infinite alternate forwards running;
+```
+
+## Background
+
+```css
+background-color: #fff;
+background-image: url(images/bg.jpg);
+background-position-x: center;
+background-position-y: center;
+background-size: cover;
+background-repeat-x: no-repeat;
+background-repeat-y: no-repeat;
+background-attachment: fixed;
+```
+
+These declarations can be shortened to just one:
+
+```css
+background: #fff url(images/bg.jpg) center/cover no-repeat fixed;
+```
+
+## Border
+
+```css
+border-width: 1px;
+border-style: solid;
+border-color: #000;
+```
+
+It can be simplified as:
+
+```css
+border: 1px solid #000;
+```
+
+## Font
+
+```css
+font-style: italic;
+font-weight: bold;
+font-size: 2rem;
+line-height: 2;
+font-family: Arial, sans-serif;
+```
+
+These 5 statements can be shortened to the following:
+
+```css
+font: italic bold 2rem/2 Arial, sans-serif;
+```
+
+## List
+
+```css
+list-style-type: circle;
+list-style-position: inside;
+list-style-image: url('https://example.com/icon.svg');
+```
+
+It can be shortened to:
+
+```css
+list-style: circle inside url('https://example.com/icon.svg');
+```
+
+## Margin and padding
+
+Shorthand versions of margin and padding values work similarly; the margin property allows for shorthand values to be specified using one, two, three, or four values.
+
+```css
+margin-top: 40px;
+margin-right: auto;
+margin-bottom: 40px;
+margin-left: auto;
+```
+
+They are the same as the following declaration using the four value shorthand. Note that the values are in clockwise order, beginning at the top: top, right, bottom, then left (TRBL, the consonants in "trouble").
+
+```css
+margin: 40px auto 40px auto;
+```
+
+When **three** values are specified, the first margin applies to the **top**, the second to the **left and right**, the third to the **bottom**.
+
+```css
+margin: 40px auto 40px;
+```
+
+When **two** values are specified, the first margin applies to the **top and bottom**, the second to the **left and right**.
+
+```css
+margin: 40px auto;
+```
+
+## Position
+
+```css
+top: 0;
+right: 20px;
+bottom: 0;
+left: 20px;
+```
+
+The shorthand versions of top, right, bottom and left can be simplified into one declaration:
+
+```css
+inset: 0 20px 0 20px;
+```
+
+Just like margins and paddings, the inset values are ordered clockwise - top, right, bottom, then left (TRBL).
+
+## Transition
+
+```css
+transition-property: all;
+transition-duration: 0.5s;
+transition-timing-function: ease;
+transition-delay: 1s;
+```
+
+These 4 declarations can be shortened to the following:
+
+```css
+transition: all 0.5s ease 1s;
+```
+
+## The universal shorthand property
+
+CSS provides a universal shorthand property, [`all`](https://developer.mozilla.org/en-US/docs/Web/CSS/all), which applies its value to every property in the document. Its purpose is to change the properties' inheritance model.
+
+```css
+/* Global values */
+all: initial;
+all: inherit;
+all: unset;
+all: revert;
+all: revert-layer;
+```
+
+The `all` property is specified as one of the CSS global keyword values. Note that none of these values affect the [`unicode-bidi`](https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi) and [`direction`](https://developer.mozilla.org/en-US/docs/Web/CSS/direction) properties.
+
+## References
+
+- [Shorthand properties - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)
+- [all - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/all)

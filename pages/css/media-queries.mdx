@@ -1,0 +1,56 @@
+# Media queries
+
+## Media Types
+
+1. `all`
+2. `print`
+3. `screen`
+4. `speech`
+
+## Media Features
+
+### prefers-color-scheme
+
+To detect if the user has requested the system use a light or dark color theme.
+
+```css
+@media (prefers-color-scheme: dark) {
+  .dark-scheme {
+    background: #222;
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .light-scheme {
+    background: white;
+    color: black;
+  }
+}
+```
+
+#### See also
+
+- [Building a color scheme](https://web.dev/building-a-color-scheme/)
+- [Color Schemes | GUI Challenges](https://gui-challenges.web.app/color-schemes/dist/)
+
+### prefers-reduced-motion
+
+To detect if the user has requested that the system minimize the amount of non-essential motion it uses.
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  /*  ...  */
+}
+```
+
+#### See also
+
+- [Card Flip 02: Reduced Motion Media Query - Una Kravets](https://codepen.io/una/pen/XWXexre)
+- [Accessible Animation - Designing in the Browser](https://www.youtube.com/watch?v=_ZdZh-ESOHY&ab_channel=GoogleChromeDevelopers)
+
+## References
+
+1. [@media - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)
+2. [Using media queries - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+3. [Media Queries Level 5 | w3.org](https://www.w3.org/TR/mediaqueries-5/)

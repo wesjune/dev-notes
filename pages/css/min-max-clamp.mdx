@@ -1,0 +1,40 @@
+# min(), max(), and clamp()
+
+- `min(<value-list>)`: selects the smallest (most negative) value from a list of comma-separated expressions
+- `max(<value-list>)`: selects the largest (most positive) value from a list of comma-separated expressions
+- `clamp(<min>, <ideal>, <max>)`: clamps a value between an upper and lower bound, based on a set ideal value
+
+```css
+.min {
+  width: min(50%, 400px);
+}
+
+.max {
+  width: max(50%, 400px);
+}
+
+p {
+  width: clamp(45ch, 50%, 75ch);
+}
+
+p {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+```
+
+For example, in the case of: `min(1rem, 50%, 10vw)`, the browser calculates which of these relative units is the smallest, and uses that value as the actual value.
+
+The `max()` function selects the largest value from a list of comma-separated expressions.
+
+> When using a calculation inside of a `min()`, `max()`, or `clamp()` function, you can remove the call to `calc()`. For example, writing `font-size: max(calc(0.5vw - 1em), 2rem)` would be the same as `font-size: max(0.5vw - 1em, 2rem)`.
+
+The CSS math functions, `min()`, `max()`, and `clamp()` are very powerful, well supported, and could be just what you're looking for to help you build responsive UIs.
+
+## References
+
+- [min(), max(), and clamp(): three logical CSS functions to use today](https://web.dev/min-max-clamp/)
+- [CSS values and units - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+- [CSS Values and Units Module Level 4](https://www.w3.org/TR/css-values-4/)
+- [Using max() for an inner-element max-width | CSS-Tricks](https://css-tricks.com/using-max-for-an-inner-element-max-width/)
+- [Everything I Learned About min(), max(), clamp() In CSS](https://ishadeed.com/article/css-min-max-clamp/)
+- [Practical Uses of CSS Math Functions: calc, clamp, min, max | Modern CSS Solutions](https://moderncss.dev/practical-uses-of-css-math-functions-calc-clamp-min-max/)

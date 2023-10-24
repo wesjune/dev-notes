@@ -1,0 +1,27 @@
+# Controlling inheritance
+
+CSS provides five special universal property values for controlling inheritance. Every CSS property accepts these values.
+
+- `inherit`
+- `initial`
+- `revert`
+- `revert-layer`
+- `unset`
+
+## revert
+
+The `revert` keyword works exactly the same as [`unset`](https://developer.mozilla.org/en-US/docs/Web/CSS/unset) in many cases. The only difference is for properties that have values set by the browser or by custom stylesheets created by users (set on the browser side).
+
+The `revert` keyword is different from and should not be confused with the [`initial`](https://developer.mozilla.org/en-US/docs/Web/CSS/initial) keyword, which uses the [initial value](https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value) defined on a per-property basis by the CSS specifications. In contrast, user-agent stylesheets set default values on the basis of CSS selectors.
+
+For example, the [initial value](https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value) for the `display` property is `inline`, whereas a normal user-agent stylesheet sets the default `display` value of `<div>`s to `block`, of `<table>`s to `table`, etc.
+
+## unset
+
+The `unset` CSS keyword resets a property to its inherited value if the property naturally inherits from its parent, and to its [initial value](https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value) if not. In other words, it behaves like the [`inherit`](https://developer.mozilla.org/en-US/docs/Web/CSS/inherit) keyword in the first case, when the property is an [inherited property](https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance#inherited_properties), and like the [`initial`](https://developer.mozilla.org/en-US/docs/Web/CSS/initial) keyword in the second case, when the property is a [non-inherited property](https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance#non-inherited_properties).
+
+## References
+
+- [Cascade and inheritance - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- [revert - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/revert)
+- [unset - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/unset)

@@ -10,6 +10,7 @@
     "title": "About",
     "type": "page"
   },
+  "css": "CSS",
   "html": "HTML",
   "javascript": "JavaScript",
   "typescript": "TypeScript",
